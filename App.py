@@ -4,17 +4,17 @@ import os
 from streamlit.components.v1 import components
 st.set_page_config(page_title="Dashboard",page_icon="Imagenes/Logo.png",layout="wide")
 st.sidebar.image("Imagenes/Logo.png")
-st.sidebar.success("Conoce a detalle nuestros productos.")
+st.sidebar.success("Bienvenido a nuestro sitio web")
+#st.sidebar.header("Paginas")
 
 
-with open('style.css')as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
-st.sidebar.header("Please filter")
 
-page_selection = st.sidebar.radio("", ["Inicio", "Productos", "Contacto"])
+
+
+page_selection = st.sidebar.radio("EXPLORA", ["INICIO", "QUIENES SOMOS"])
 
 # Contenido de la página de inicio
-if page_selection == "Inicio":
+if page_selection == "INICIO":
     st.markdown("<h1 style='text-align: center;'>🍌Plátanos Magar🍌</h1>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: center;'>Productores-Empacadores-Distribuidores</h3><br>",unsafe_allow_html=True)
 
@@ -92,97 +92,113 @@ if page_selection == "Inicio":
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.header("Platano datil (dominico)")
+        st.header("Plátano datil (dominico)")
         st.write("")
         st.write("")
         st.write("")
         st.image("Imagenes/dominico2.jpg")
 
     with col2:
-        st.header("Platanos, bananos para nacional y exportación")
+        st.header("Plátanos, bananos para nacional y exportación")
         st.image("Imagenes/platanos3.jpeg")
 
     with col3:
-        st.header("Platanos machos para nacional y exportación")
+        st.header("Plátanos machos para nacional y exportación")
         st.image("Imagenes/machos1.jpeg")
 
 
 
-    st.markdown("DONDE NOS UBICAMOS")
-    st.markdown("")
+    st.markdown("<h1 style='text-align: center;'>🌏</h1>", unsafe_allow_html=True)
+    st.markdown("""
+                <div style='font-size: 24px; font-family: Arial;'>  
+                Nuestros huertos estan ubicados en el corazón de la producción de plátanos, Chiapas y Tabasco, 
+                las características inigualables de estas regiones nos permiten ofrecer plátanos de alta
+                calidad durante todo el año. ¡Disfruta del sabor excepcional que solo estas regiones
+                inigualables pueden ofrecer! 
+                  <br><br>
+                 </div>
+                
+                """,unsafe_allow_html=True
+                ) 
     st.markdown("<h2 style='text-align: center;'>Contacto 📞</h2>",unsafe_allow_html=True)
-    st.markdown("<h4 style='text-align: center;'><strong>Para mejor atención contactanos a traves de nuestras redes sociales</strong></h4>",unsafe_allow_html=True)
+    st.markdown("<h4 style='text-align: center;'><strong>Para mejor atención contáctanos a través de nuestras redes sociales </strong></h4>",unsafe_allow_html=True)
     st.markdown("")
   
     
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.link_button("   :red[LinkedIn]", "https://streamlit.io/gallery")
-
-        
-   
-
-
-
+        st.link_button(":red[LinkedIn]", "https://www.linkedin.com/company/98972830/admin/feed/posts/")
     with col2:
-        st.link_button("   :blue[Facebook]", "https://streamlit.io/gallery")
-
+        st.link_button(":blue[Facebook]", "https://www.facebook.com/Magar.frutasmex.limited")
     with col3:
-        st.link_button("   :red[LinkedIn]", "https://streamlit.io/gallery")
+        #st.link_button(":red[Whats app]", "https://streamlit.io/gallery")
+        imagen = "Imagenes/whats.jpeg"
 
+# Muestra la imagen con un ancho específico
+        st.image(imagen,width=200)
+#------------------------------------------------------------------------------------------------------------------------
+elif page_selection == "QUIENES SOMOS":
+
+    st.title("Quienes Somos 🤗🌴")
+    st.markdown("""
+           <div style='font-size: 24px; font-family: Arial;'>  
+                Es un placer para nosotros presentar nuestra empresa,somos
+                 una empresa ubicada en la Ciudad de México dedicada a la comercialización 
+                de Plátanos, Bananos, Bananas y derivados con certificados para exportar."
+             <br><br>
+           </div>
+           
+           """,unsafe_allow_html=True
+           )
+    st.markdown("""<div style='font-size: 24px; font-family: Arial;'>
+                 <strong>🌏Misión:</strong> Ser un producto de calidad que 
+                guste a todos los que lo consuman, ofreciendo un servicio
+                 único en todo momento.</div>""",unsafe_allow_html=True)
+    
+    st.markdown("""<div style='font-size: 24px; font-family: Arial;'>
+                <strong>🌏Visión:</strong> Posicionarnos como una marca en un mercado competitivo 
+                que se ajusta a las necesidades del mercado.</div><br><br>""",unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        st.subheader(':red[Contacto]')
+        st.markdown("""<div style='font-size: 24px; font-family: Arial;'>
+                    Comercialización<br>Omar Martínez<br>
+                    omar.paps3012003@gmail.com</div>""",unsafe_allow_html=True)
+        st.link_button(":blue[Facebook]", "https://www.facebook.com/Magar.frutasmex.limited")
+        st.link_button(":black[LinkedIn]", "https://www.linkedin.com/company/98972830/admin/feed/posts/")
+        imagen = "Imagenes/whats.jpeg"
+
+# Muestra la imagen con un ancho específico
+        st.image(imagen,width=200)
+        st.markdown("")
+        st.markdown("")
+    with col2:
+        st.image("Imagenes/fondo3.jpg")
+    
+    col4, col5, col6 = st.columns(3)
+
+
+    with col4:
+   
+     st.image("Imagenes/banana1.jpg")
+
+    with col5:
+   
+     
+     st.image("Imagenes/penca.jpg")
+
+    with col6:
+   
+     st.image("Imagenes/cajas1.jpg")
+        
     
 
-
-
-
-
-
-
-
-
-
-
-elif page_selection == "Productos":
-    st.title("Página de Productos")
-    st.write("Aquí puedes encontrar información sobre nuestros producto")
-
-    agree = st.checkbox('I agree')
-
-    if agree:
-     st.write('Great!')
-    
 
 # Contenido de la página de contacto
-elif page_selection == "Contacto":
-    st.title("Página de Contacto")
-    st.write("Para contactarnos, envía un correo electrónico a contacto@frutasmex.com.")
-    st.button("Go to gallery", "https://streamlit.io/gallery")
-
+ #elif page_selection == "Contacto":
+  ## st.write("Para contactarnos, envía un correo electrónico a contacto@frutasmex.com.")
+ #   st.button("Go to gallery", "https://streamlit.io/gallery")
+#
     
-
-    
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.header("Bananos Racimo Completo")
-        st.image("https://static.streamlit.io/examples/cat.jpg")
-        
-
-    with col2:
-        st.header("A dog")
-        st.image("https://static.streamlit.io/examples/dog.jpg")
-
-    with col3:
-        st.header("An owl")
-        st.image("https://static.streamlit.io/examples/owl.jpg")
-
-    
-
-    
-
-
-
-
-
-
